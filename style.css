@@ -1,6 +1,5 @@
 /* ============================================================
    MARION LAGARDE — PORTFOLIO
-   style.css — feuille de styles partagée
    ============================================================ */
 
 /* ── TOKENS ── */
@@ -844,7 +843,7 @@ section + section { border-top: none; }
 
   /* Homepage hero */
   #hero        { padding: 100px 24px 60px; min-height: 100svh; }
-  .hero-title  { font-size: clamp(44px, 13vw, 72px); }
+  .hero-title  { font-size: clamp(36px, 10vw, 48px); }
   .hero-subtitle { font-size: 16px; margin-top: 14px; }
   .hero-eyebrow  { font-size: 10px; letter-spacing: 0.18em; margin-bottom: 20px; }
   .hero-bottom   { right: 24px; bottom: 28px; }
@@ -862,7 +861,7 @@ section + section { border-top: none; }
     flex-direction: column;
     padding: 0;
   }
-  .project-img-wrap  { flex: none; aspect-ratio: 3/4; width: 100%; height: auto; max-height: 52svh; }
+  .project-img-wrap  { flex: none; aspect-ratio: 3/4; width: 100%; height: auto; }
   .project-info      { flex-shrink: 0; margin-top: 14px; padding: 0; }
   .project-name      { font-size: 14px; }
   .project-arrow     { opacity: 1; transform: none; width: 32px; height: 32px; flex-shrink: 0; }
@@ -905,6 +904,6 @@ section + section { border-top: none; }
 }
 
 @media (max-width: 480px) {
-  .hero-title { font-size: clamp(40px, 14vw, 56px); }
+  .hero-title { font-size: clamp(34px, 11vw, 44px); }
   .nav-links li:not(:first-child) { display: none; }
 }
