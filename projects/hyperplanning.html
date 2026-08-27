@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Webians — Marion Lagarde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* Images full width sans gap */
+    .fullwidth-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+    .fullwidth-gallery img {
+      width: 100%;
+      display: block;
+    }
+    .fullwidth-gallery .img-placeholder {
+      aspect-ratio: 16/9;
+      width: 100%;
+    }
+    .fullwidth-gallery .img-placeholder.portrait {
+      aspect-ratio: 4/5;
+    }
+    .fullwidth-gallery .img-placeholder.square {
+      aspect-ratio: 1/1;
+    }
+    .section-fullbleed {
+      padding: 0;
+      border-top: none !important;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">Marion Lagarde</a>
+    <a href="../index.html#projects" class="nav-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+      Retour
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <p class="hero-tag">Design System &amp; Identité visuelle</p>
+    <h1 class="page-title">Hyperplanning</h1>
+
+    <div class="hero-meta">
+      <div class="meta-item reveal">
+        <p class="meta-label">Période</p>
+        <p class="meta-value"><strong>2023</strong></p>
+      </div>
+      <div class="meta-item reveal" style="transition-delay:.08s">
+        <p class="meta-label">Mon rôle</p>
+        <p class="meta-value"><strong>Directrice Artistique</strong><br>Designer UI/UX</p>
+      </div>
+      <div class="meta-item reveal" style="transition-delay:.16s">
+        <p class="meta-label">Livrables</p>
+        <p class="meta-value">Identité visuelle<br>Design system<br>Web App</p>
+      </div>
+      <div class="meta-item reveal" style="transition-delay:.24s">
+        <p class="meta-label">Outils</p>
+        <p class="meta-value">Figma<br>Illustrator<br>Procreate</p>
+      </div>
+
+      <div class="meta-row-full reveal" style="transition-delay:.32s">
+        <div>
+          <p class="meta-label" style="margin-bottom:14px;">Contexte</p>
+          <p class="meta-block-text">
+            Hyperplanning est un outil de gestion d'emploi du temps pour étudiants. Il permet de centraliser le suivi des différents modules de court ainsi que la gestion administrative de la vie d'une école.
+          </p>
+        </div>
+        <div>
+          <p class="meta-label" style="margin-bottom:14px;">Approche</p>
+          <p class="meta-block-text">
+            L'identité repose sur une approche collorée et douce. Elle donne une ambiance joyeuse sans être agressive et permet à l'utilisateur un suivi agréable de l'application.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE FULL WIDTH — pas de texte, pas d'animation -->
+  <section class="section-fullbleed">
+    <div class="fullwidth-gallery">
+
+      <img src="../images/hyperplanning/maquette-hp.jpg" alt="Logo et construction">
+       <img src="../images/hyperplanning/note-book.png" alt="Logo et construction">
+        <img src="../images/hyperplanning/tote-bag.png" alt="Logo et construction">
+
+
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-copy">© 2024 Marion Lagarde</span>
+    <a href="taylors.html" class="footer-next">
+      Projet suivant — Taylor's
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M19 12l-7 7M19 12l-7-7"/></svg>
+    </a>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

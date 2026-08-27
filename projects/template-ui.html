@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taylor's — Marion Lagarde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:        #f2f0ec;
+      --bg-soft:   #ede9e3;
+      --bg-card:   #e8e4de;
+      --fg:        #1e1e1c;
+      --fg-muted:  #6a6a66;
+      --fg-subtle: #a8a8a4;
+      --accent:    #5a5248;
+      --border:    rgba(30,30,28,0.10);
+      --font-sans: 'DM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --font-serif: 'Times New Roman', Times, Georgia, serif;
+      --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 60px;
+    }
+    nav::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(242,240,236,0.97) 0%, transparent 100%);
+      pointer-events: none;
+    }
+    .nav-logo {
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--fg);
+      text-decoration: none;
+      position: relative;
+    }
+    .nav-back {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      transition: color 0.3s ease, gap 0.3s ease;
+    }
+    .nav-back:hover { color: var(--fg); gap: 14px; }
+    .nav-back svg { width: 14px; height: 14px; stroke: currentColor; }
+
+    /* ── HERO ── */
+    #hero {
+      padding: 160px 60px 80px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-tag {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--fg-subtle);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-tag::before { content: ''; width: 28px; height: 1px; background: var(--fg-subtle); }
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(48px, 8vw, 110px);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.0;
+      color: var(--fg);
+      margin-bottom: 64px;
+    }
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+    .meta-label {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--fg-subtle);
+      margin-bottom: 10px;
+    }
+    .meta-value {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--fg-muted);
+      line-height: 1.5;
+    }
+    .meta-value strong { font-weight: 400; color: var(--fg); }
+    .meta-item.brief {
+      grid-column: 1 / -1;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .meta-item.brief .meta-value {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--fg);
+      line-height: 1.65;
+      max-width: 720px;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 100px 60px; }
+    section + section { border-top: 1px solid var(--border); }
+    .section-label {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--fg-subtle);
+      margin-bottom: 56px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .section-label::before { content: attr(data-n); color: var(--fg-subtle); }
+
+    /* ── BRANDING ── */
+    .branding-block { display: flex; flex-direction: column; gap: 72px; }
+    .palette-title, .typo-title {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      margin-bottom: 28px;
+    }
+    .palette-swatches { display: flex; gap: 16px; flex-wrap: wrap; }
+    .swatch { display: flex; flex-direction: column; gap: 12px; }
+    .swatch-color { width: 100px; height: 100px; border-radius: 2px; }
+    .swatch-hex { font-size: 12px; font-weight: 400; letter-spacing: 0.06em; color: var(--fg); font-family: 'Courier New', monospace; }
+    .swatch-name { font-size: 11px; color: var(--fg-subtle); margin-top: 2px; letter-spacing: 0.04em; }
+    .typo-showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .typo-card { background: var(--bg-card); padding: 40px; display: flex; flex-direction: column; justify-content: space-between; min-height: 200px; }
+    .typo-sample { font-size: clamp(28px, 3.5vw, 48px); line-height: 1.1; color: var(--fg); margin-bottom: 24px; }
+    .typo-meta { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); }
+    .typo-meta strong { display: block; font-weight: 400; color: var(--fg-muted); margin-bottom: 2px; }
+
+    /* ── UX ARBORESCENCE ── */
+    .ux-block { display: flex; flex-direction: column; gap: 64px; }
+
+    .tree-title {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      margin-bottom: 32px;
+    }
+
+    /* Arborescence visuelle */
+    .tree {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      font-size: 13px;
+      font-weight: 300;
+    }
+    .tree-root {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--fg);
+      color: var(--bg);
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      width: fit-content;
+      margin-bottom: 2px;
+    }
+    .tree-children {
+      display: flex;
+      gap: 2px;
+      padding-left: 0;
+      margin-top: 2px;
+    }
+    .tree-branch {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      flex: 1;
+    }
+    .tree-node {
+      background: var(--bg-card);
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--fg-muted);
+      letter-spacing: 0.04em;
+      transition: background 0.2s, color 0.2s;
+    }
+    .tree-node:hover { background: var(--bg-soft); color: var(--fg); }
+    .tree-leaf {
+      background: var(--bg-soft);
+      padding: 8px 16px;
+      font-size: 12px;
+      color: var(--fg-subtle);
+      letter-spacing: 0.04em;
+      border-left: 2px solid var(--border);
+      margin-top: 2px;
+    }
+
+    /* Images section */
+    .gallery-grid { display: grid; gap: 16px; }
+    .gallery-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+    .gallery-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+    .gallery-grid.mixed  { grid-template-columns: 2fr 1fr; }
+    .gallery-item { background: var(--bg-card); overflow: hidden; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.7s var(--ease-out); }
+    .gallery-item:hover img { transform: scale(1.03); }
+    .img-placeholder {
+      width: 100%; background: var(--bg-card);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--fg-subtle); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      aspect-ratio: 16/10;
+    }
+    .img-placeholder.tall { aspect-ratio: 9/16; }
+    .img-placeholder.square { aspect-ratio: 1/1; }
+    .img-placeholder.wide { aspect-ratio: 21/9; }
+
+    /* Screen mockups row */
+    .screens-row {
+      display: flex;
+      gap: 16px;
+      align-items: flex-end;
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+    .screen-mock {
+      flex: 0 0 220px;
+      background: var(--bg-card);
+      border-radius: 28px;
+      overflow: hidden;
+      aspect-ratio: 9/19.5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--fg-subtle);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-copy { font-size: 11px; letter-spacing: 0.12em; color: var(--fg-subtle); }
+    .footer-next {
+      font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--fg-muted); text-decoration: none;
+      display: flex; align-items: center; gap: 12px;
+      transition: color 0.3s, gap 0.3s;
+    }
+    .footer-next:hover { color: var(--fg); gap: 18px; }
+    .footer-next svg { width: 14px; height: 14px; stroke: currentColor; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── GRAIN ── */
+    body::after {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 999; opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat; background-size: 200px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 22px 24px; }
+      #hero { padding: 110px 24px 60px; }
+      .hero-title { font-size: clamp(40px, 12vw, 64px); margin-bottom: 40px; }
+      .hero-meta { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .meta-item.brief .meta-value { font-size: 16px; }
+      section { padding: 64px 24px; }
+      .palette-swatches { gap: 12px; }
+      .swatch-color { width: 72px; height: 72px; }
+      .typo-showcase { grid-template-columns: 1fr; gap: 16px; }
+      .gallery-grid.cols-2,
+      .gallery-grid.cols-3,
+      .gallery-grid.mixed { grid-template-columns: 1fr; }
+      .tree-children { flex-direction: column; }
+      .screen-mock { flex: 0 0 160px; }
+      footer { padding: 28px 24px; flex-direction: column; gap: 20px; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="../index.html" class="nav-logo">Marion Lagarde</a>
+    <a href="../index.html#projects" class="nav-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+      Retour
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <p class="hero-tag">UI/UX Design</p>
+    <h1 class="hero-title">Taylor's</h1>
+
+    <div class="hero-meta">
+      <div class="meta-item reveal">
+        <p class="meta-label">Année</p>
+        <p class="meta-value"><strong>2023</strong></p>
+      </div>
+      <div class="meta-item reveal" style="transition-delay:.08s">
+        <p class="meta-label">Domaine</p>
+        <p class="meta-value"><strong>UI/UX Design</strong><br>Direction artistique</p>
+      </div>
+      <div class="meta-item reveal" style="transition-delay:.16s">
+        <p class="meta-label">Outils</p>
+        <p class="meta-value">Figma<br>Illustrator<br>Maze</p>
+      </div>
+      <div class="meta-item reveal" style="transition-delay:.24s">
+        <p class="meta-label">Statut</p>
+        <p class="meta-value"><strong>Livré</strong></p>
+      </div>
+
+      <div class="meta-item brief reveal" style="transition-delay:.32s">
+        <p class="meta-label">Brief</p>
+        <p class="meta-value">
+          Taylor's est une application de réservation de salons de coiffure indépendants. La mission consistait à repenser l'expérience utilisateur de A à Z : de l'onboarding au paiement, en passant par la prise de rendez-vous et la gestion du profil. L'enjeu était de simplifier un parcours jugé trop complexe par les utilisateurs tout en affirmant une identité visuelle forte et distinctive.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1 : BRANDING -->
+  <section id="branding">
+    <p class="section-label" data-n="01">Branding</p>
+
+    <div class="branding-block">
+
+      <div class="reveal">
+        <p class="palette-title">Palette de couleurs</p>
+        <div class="palette-swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#1B1B1F;border:1px solid rgba(30,30,28,.12)"></div>
+            <p class="swatch-hex">#1B1B1F</p>
+            <p class="swatch-name">Obsidienne</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#E8DDD0;"></div>
+            <p class="swatch-hex">#E8DDD0</p>
+            <p class="swatch-name">Lin</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#BFA98A;"></div>
+            <p class="swatch-hex">#BFA98A</p>
+            <p class="swatch-name">Camel</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#6B5C4E;"></div>
+            <p class="swatch-hex">#6B5C4E</p>
+            <p class="swatch-name">Cuir</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#F7F4EF;border:1px solid rgba(30,30,28,.08)"></div>
+            <p class="swatch-hex">#F7F4EF</p>
+            <p class="swatch-name">Ivoire</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <p class="typo-title">Typographie</p>
+        <div class="typo-showcase">
+          <div class="typo-card">
+            <p class="typo-sample" style="font-family:'Times New Roman',serif; font-style:italic; letter-spacing:-0.01em;">
+              Your style,<br>your rules.
+            </p>
+            <div class="typo-meta">
+              <strong>Times New Roman Italic</strong>
+              Display / Headlines
+            </div>
+          </div>
+          <div class="typo-card">
+            <p class="typo-sample" style="font-family:'Helvetica Neue',Helvetica,sans-serif; font-weight:300; font-size:clamp(15px,1.8vw,22px); line-height:1.6;">
+              Réservez votre prochain rendez-vous en moins de 30 secondes, partout, à tout moment.
+            </p>
+            <div class="typo-meta">
+              <strong>Helvetica Neue Light</strong>
+              Corps de texte / UI
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2 : UX + VISUELS -->
+  <section id="ux">
+    <p class="section-label" data-n="02">Architecture UX &amp; Écrans</p>
+
+    <div class="ux-block">
+
+      <!-- Arborescence -->
+      <div class="reveal">
+        <p class="tree-title">Arborescence</p>
+        <div class="tree">
+          <div class="tree-root">Taylor's App</div>
+          <div class="tree-children">
+            <div class="tree-branch">
+              <div class="tree-node">Onboarding</div>
+              <div class="tree-leaf">Bienvenue</div>
+              <div class="tree-leaf">Connexion / Inscription</div>
+              <div class="tree-leaf">Préférences</div>
+            </div>
+            <div class="tree-branch">
+              <div class="tree-node">Explorer</div>
+              <div class="tree-leaf">Recherche</div>
+              <div class="tree-leaf">Filtres</div>
+              <div class="tree-leaf">Fiche salon</div>
+            </div>
+            <div class="tree-branch">
+              <div class="tree-node">Réservation</div>
+              <div class="tree-leaf">Choix prestation</div>
+              <div class="tree-leaf">Choix coiffeur</div>
+              <div class="tree-leaf">Créneau</div>
+              <div class="tree-leaf">Confirmation</div>
+            </div>
+            <div class="tree-branch">
+              <div class="tree-node">Mon espace</div>
+              <div class="tree-leaf">Historique</div>
+              <div class="tree-leaf">Favoris</div>
+              <div class="tree-leaf">Paramètres</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mockups écrans -->
+      <div class="reveal" style="transition-delay:.1s">
+        <p class="tree-title">Écrans clés</p>
+        <!-- Remplace les screen-mock par tes vraies images -->
+        <div class="screens-row">
+          <div class="screen-mock">Home</div>
+          <div class="screen-mock">Recherche</div>
+          <div class="screen-mock">Fiche salon</div>
+          <div class="screen-mock">Réservation</div>
+          <div class="screen-mock">Confirmation</div>
+        </div>
+      </div>
+
+      <!-- Images pleine largeur -->
+      <div class="gallery-grid cols-2 reveal" style="transition-delay:.2s; margin-bottom:16px;">
+        <div class="gallery-item">
+          <div class="img-placeholder tall">Flow complet — onboarding</div>
+        </div>
+        <div class="gallery-item">
+          <div class="img-placeholder tall">Flow réservation</div>
+        </div>
+      </div>
+
+      <div class="gallery-grid cols-3 reveal" style="transition-delay:.3s;">
+        <div class="gallery-item"><div class="img-placeholder">Design system — composants</div></div>
+        <div class="gallery-item"><div class="img-placeholder">États d'interaction</div></div>
+        <div class="gallery-item"><div class="img-placeholder">Prototype Figma</div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-copy">© 2024 Marion Lagarde</span>
+    <a href="millesima.html" class="footer-next">
+      Projet suivant — Millesima
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M19 12l-7 7M19 12l-7-7"/></svg>
+    </a>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

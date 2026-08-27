@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Webians — Marion Lagarde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* Images full width sans gap */
+    .fullwidth-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+    .fullwidth-gallery img {
+      width: 100%;
+      display: block;
+    }
+    .fullwidth-gallery .img-placeholder {
+      aspect-ratio: 16/9;
+      width: 100%;
+    }
+    .fullwidth-gallery .img-placeholder.portrait {
+      aspect-ratio: 4/5;
+    }
+    .fullwidth-gallery .img-placeholder.square {
+      aspect-ratio: 1/1;
+    }
+    .section-fullbleed {
+      padding: 0;
+      border-top: none !important;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">Marion Lagarde</a>
+    <a href="../index.html#projects" class="nav-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+      Retour
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <p class="hero-tag">Design System &amp; Identité visuelle</p>
+    <h1 class="page-title">Webians</h1>
+
+    <div class="hero-meta">
+      <div class="meta-item reveal">
+        <p class="meta-label">Période</p>
+        <p class="meta-value"><strong>2020 — 2022</strong></p>
+      </div>
+      <div class="meta-item reveal" style="transition-delay:.08s">
+        <p class="meta-label">Mon rôle</p>
+        <p class="meta-value"><strong>Directrice Artistique</strong><br>Designer UI/UX</p>
+      </div>
+      <div class="meta-item reveal" style="transition-delay:.16s">
+        <p class="meta-label">Livrables</p>
+        <p class="meta-value">Identité visuelle<br>Design system<br>Site web<br>Goodies</p>
+      </div>
+      <div class="meta-item reveal" style="transition-delay:.24s">
+        <p class="meta-label">Outils</p>
+        <p class="meta-value">Figma<br>Illustrator<br>Procreate</p>
+      </div>
+
+      <div class="meta-row-full reveal" style="transition-delay:.32s">
+        <div>
+          <p class="meta-label" style="margin-bottom:14px;">Contexte</p>
+          <p class="meta-block-text">
+            Deux ans passés au sein de Webians, agence d'accompagnement digital spécialisée dans la création d'applications, de sites web, la communication et la direction artistique, à prendre en charge l'intégralité de la direction artistique de la structure.
+          </p>
+        </div>
+        <div>
+          <p class="meta-label" style="margin-bottom:14px;">Approche</p>
+          <p class="meta-block-text">
+            L'identité repose sur un univers illustratif fort, construit autour d'une mascotte et de ses nombreuses déclinaisons. Manuelle et expressive, elle traduit la personnalité singulière de l'agence et assure une reconnaissance immédiate de la marque sur l'ensemble de ses supports.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE FULL WIDTH — pas de texte, pas d'animation -->
+  <section class="section-fullbleed">
+    <div class="fullwidth-gallery">
+
+      <img src="../images/webians/webians-01.jpg" alt="Logo et construction">
+      <img src="../images/webians/webians-02.jpg" alt="Logo">
+      <img src="../images/webians/webians-03.jpg" alt="Déclinaisons logo">
+      <img src="../images/webians/webians-04.jpg" alt="Couleurs">
+      <img src="../images/webians/webians-05.jpg" alt="Typographie">
+      <img src="../images/webians/webians-06.jpg" alt="Illustrations">
+      <img src="../images/webians/webians-07.jpg" alt="Icônes web">
+      <img src="../images/webians/webians-08.jpg" alt="Icônes web constructions et grilles">
+      <img src="../images/webians/webians-09.jpg" alt="Déclinaisons réseaux sociaux">
+      <img src="../images/webians/webians-13.jpg" alt="Grid Instagram">
+      <img src="../images/webians/grid-resposive-site.jpg" alt="Site web desktop, tablette et phone">
+      <img src="../images/webians/-homepage.jpg" alt="Homepage du site">
+      <img src="../images/webians/mac-website.jpg" alt="Aperçu site">
+      <img src="../images/webians/webians-11.jpg" alt="Tasse et tote-bag">
+      <img src="../images/webians/webians-12.jpg" alt="Carte de visite">
+      <img src="../images/webians/stickers-webians.png" alt="Stickers goodies">
+      <img src="../images/webians/affichette-bureau-webians.jpg" alt="Poster interdit de fumer">
+
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-copy">© 2024 Marion Lagarde</span>
+    <a href="nos-voix.html" class="footer-next">
+      Projet suivant — Nos Voix
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M19 12l-7 7M19 12l-7-7"/></svg>
+    </a>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

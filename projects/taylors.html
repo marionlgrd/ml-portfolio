@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taylor's — Marion Lagarde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">Marion Lagarde</a>
+    <a href="../index.html#projects" class="nav-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+      Retour
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <p class="hero-tag">UI/UX &amp; Shopify</p>
+    <h1 class="page-title">Taylor's</h1>
+
+    <div class="hero-meta">
+      <div class="meta-item reveal">
+        <p class="meta-label">Année</p>
+        <p class="meta-value"><strong>2025</strong></p>
+      </div>
+      <div class="meta-item reveal" style="transition-delay:.08s">
+        <p class="meta-label">Domaine</p>
+        <p class="meta-value"><strong>UI/UX</strong><br>E-commerce<br>Shopify</p>
+      </div>
+      <div class="meta-item reveal" style="transition-delay:.16s">
+        <p class="meta-label">Outils</p>
+        <p class="meta-value">Shopify / Liquid<br>Photoshop</p>
+      </div>
+      <div class="meta-item reveal" style="transition-delay:.24s">
+        <p class="meta-label">Langues</p>
+        <p class="meta-value"><strong>8 langues</strong><br>11 pays</p>
+      </div>
+
+      <div class="meta-row-full reveal" style="transition-delay:.32s">
+        <div>
+          <p class="meta-label" style="margin-bottom:14px;">Contexte &amp; Solution</p>
+          <p class="meta-block-text">
+            Taylor's compte parmi les plus anciennes maisons fondatrices du porto. Les clients venant de pays étrangers n'achetait pas de produit en sortant de la boutique par contrainte de leur retour en avion. La maison souhaitait pouvoir proposer ses produits à l'expédition par Millesima au sein de ses boutiques au Portugal.
+          </p>
+          <p class="meta-block-text" style="margin-top:16px; color:var(--fg-muted);">
+            Création d'un Shopify en 8 langues avec les produits de la boutique. Site pensé pour la navigation tablette et mobile depuis un QR code dans la boutique physique. Branding Millesima.
+          </p>
+        </div>
+        <div>
+          <p class="meta-label" style="margin-bottom:14px;">Mon rôle</p>
+          <ul class="role-list">
+            <li>UI/UX de la e-boutique</li>
+            <li>Création et intégration des assets visuels</li>
+            <li>Contenus rédactionnels descriptifs des produits</li>
+            <li>Architecture de navigation</li>
+            <li>Alimentation du back-office Shopify</li>
+            <li>Personnalisation Liquid du template</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 — BRANDING -->
+  <section>
+    <p class="section-label" data-n="01">Branding Millesima</p>
+
+    <div class="branding-row reveal">
+      <div>
+        <p class="sub-title">Palette de couleurs</p>
+        <div class="palette-swatches">
+          <!-- Palette couleurs du projet — conservées hors-thème -->
+          <div class="swatch">
+            <div class="swatch-color" style="background:#1D1D1D;"></div>
+            <p class="swatch-hex">#1D1D1D</p>
+            <p class="swatch-name">Principale</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#FFFFFF; border:1px solid var(--border)"></div>
+            <p class="swatch-hex">#FFFFFF</p>
+            <p class="swatch-name">Couleur de fond</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="sub-title">Typographie</p>
+        <div class="typo-card-single">
+          <div class="typo-card-top">
+            <p class="typo-display" style="font-family:'Montserrat',sans-serif;">
+              Aa Bb Cc<br>
+              <span style="font-weight:400;">Dd Ee Ff</span><br>
+              <span style="font-weight:500;">Gg Hh Ii</span>
+            </p>
+          </div>
+          <div class="typo-card-bottom">
+            <p style="font-family:'Montserrat',sans-serif;">
+              <span style="font-size:20px; font-weight:500; display:block; line-height:1.2; margin-bottom:8px; color:var(--fg);">Porto Tawny 20 Ans</span>
+              <span style="font-size:14px; font-weight:300; display:block; line-height:1.6; color:var(--fg-muted);">Un tawny d'une rare complexité, aux arômes de fruits secs et d'épices douces, élevé en fûts de chêne.</span>
+            </p>
+            <div class="typo-meta" style="margin-top:20px;">
+              <strong>Montserrat</strong>
+              Light 300 · Regular 400 · Medium 500
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 — UX + E-BOUTIQUE -->
+  <section>
+    <p class="section-label" data-n="02">Architecture UX &amp; E-boutique</p>
+
+    <div class="ux-block">
+
+      <div class="reveal">
+        <p class="sub-title" style="margin-bottom:24px;">Arborescence</p>
+        <div class="tree-wrap">
+          <svg class="tree-svg" viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg" aria-label="Arborescence du site Taylor's">
+            <defs>
+              <style>
+                .tn-dark  { fill: #1e1e1c; }
+                .tn-mid   { fill: #e8e4de; }
+                .tn-light { fill: #f2f0ec; stroke: rgba(30,30,28,.14); stroke-width:1; }
+                .tt-w     { fill: #f2f0ec; font-family:'DM Sans','Helvetica Neue',sans-serif; font-weight:300; }
+                .tt-d     { fill: #1e1e1c; font-family:'DM Sans','Helvetica Neue',sans-serif; font-weight:300; }
+                .tt-m     { fill: #6a6a66; font-family:'DM Sans','Helvetica Neue',sans-serif; font-weight:300; }
+                .tl       { stroke: rgba(30,30,28,.2); stroke-width:1; fill:none; }
+                .tt-tag   { fill: #6a6a66; font-family:'DM Sans','Helvetica Neue',sans-serif; font-weight:400; }
+              </style>
+            </defs>
+            <rect x="20"  y="110" width="130" height="60" class="tn-dark"/>
+            <text x="85"  y="135" text-anchor="middle" font-size="13" class="tt-w">Homepage</text>
+            <text x="85"  y="153" text-anchor="middle" font-size="10" class="tt-w" opacity=".5">Accueil</text>
+            <line x1="150" y1="140" x2="190" y2="140" class="tl"/>
+            <rect x="190" y="110" width="160" height="60" class="tn-mid"/>
+            <text x="270" y="134" text-anchor="middle" font-size="13" class="tt-d">Tous nos vins</text>
+            <text x="270" y="152" text-anchor="middle" font-size="10" class="tt-m">3 catégories</text>
+            <line x1="350" y1="140" x2="380" y2="140" class="tl"/>
+            <line x1="380" y1="50"  x2="380" y2="230" class="tl"/>
+            <line x1="380" y1="50"  x2="410" y2="50"  class="tl"/>
+            <line x1="380" y1="140" x2="410" y2="140" class="tl"/>
+            <line x1="380" y1="230" x2="410" y2="230" class="tl"/>
+            <rect x="410" y="22"  width="138" height="56" class="tn-light"/>
+            <text x="479" y="45"  text-anchor="middle" font-size="12" class="tt-d">Porto Tawny</text>
+            <text x="479" y="62"  text-anchor="middle" font-size="10" class="tt-m">10, 20, 30, 40 ans</text>
+            <rect x="410" y="112" width="138" height="56" class="tn-light"/>
+            <text x="479" y="135" text-anchor="middle" font-size="12" class="tt-d">Porto Vintage</text>
+            <text x="479" y="152" text-anchor="middle" font-size="10" class="tt-m">Millésimes sélectionnés</text>
+            <rect x="410" y="202" width="138" height="56" class="tn-light"/>
+            <text x="479" y="225" text-anchor="middle" font-size="12" class="tt-d">Vins</text>
+            <text x="479" y="242" text-anchor="middle" font-size="10" class="tt-m">Douro &amp; Quinta</text>
+            <line x1="548" y1="50"  x2="578" y2="50"  class="tl"/>
+            <line x1="548" y1="140" x2="578" y2="140" class="tl"/>
+            <line x1="548" y1="230" x2="578" y2="230" class="tl"/>
+            <line x1="578" y1="50"  x2="578" y2="230" class="tl"/>
+            <line x1="578" y1="140" x2="610" y2="140" class="tl"/>
+            <rect x="610" y="110" width="140" height="60" class="tn-mid"/>
+            <text x="680" y="134" text-anchor="middle" font-size="13" class="tt-d">Page produit</text>
+            <text x="680" y="152" text-anchor="middle" font-size="10" class="tt-m">Fiche &amp; ajout panier</text>
+            <line x1="750" y1="140" x2="780" y2="140" class="tl"/>
+            <rect x="780" y="110" width="100" height="60" class="tn-dark"/>
+            <text x="830" y="134" text-anchor="middle" font-size="12" class="tt-w">Tunnel de</text>
+            <text x="830" y="151" text-anchor="middle" font-size="12" class="tt-w">paiement</text>
+            <line x1="20" y1="274" x2="880" y2="274" stroke="rgba(30,30,28,.15)" stroke-width="1"/>
+            <text x="20" y="266" font-size="9" class="tt-tag" opacity=".6" letter-spacing="2">SHOPIFY — 8 LANGUES — NAVIGATION TABLETTE</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay:.15s">
+        <p class="sub-title" style="margin-bottom:20px;">E-boutique</p>
+        <div class="boutique-frame">
+           <img src="../images/taylors/taylors.jpg" alt="E-boutique Taylor's — vue tablette"> 
+        </div>
+        <p class="img-caption">Vue mobile du site</p>
+      </div>
+            <div class="reveal" style="transition-delay:.15s">
+        <div class="boutique-frame">
+           <img src="../images/taylors/taylors-01.jpg" alt="E-boutique Taylor's — vue tablette"> 
+        </div>
+        <p class="img-caption">Vue desktop du site</p>
+      </div>
+
+
+      <div class="result-simple reveal" style="transition-delay:.25s">
+        <span class="result-chip">+5% de chiffre d'affaires sur 1 an</span>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-copy">© 2024 Marion Lagarde</span>
+    <a href="millesima.html" class="footer-next">
+      Projet suivant — Millesima
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M19 12l-7 7M19 12l-7-7"/></svg>
+    </a>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

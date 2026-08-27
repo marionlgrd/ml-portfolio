@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poppy Surfboard — Marion Lagarde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .fullwidth-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+    .fullwidth-gallery img {
+      width: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">Marion Lagarde</a>
+    <a href="../index.html#projects" class="nav-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+      Retour
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <p class="hero-tag">Identité visuelle</p>
+    <h1 class="page-title">Poppy Surfboard</h1>
+
+    <div class="hero-meta">
+      <div class="meta-item reveal">
+        <p class="meta-label">Année</p>
+        <p class="meta-value"><strong>2021</strong></p>
+      </div>
+      <div class="meta-item reveal" style="transition-delay:.08s">
+        <p class="meta-label">Domaine</p>
+        <p class="meta-value"><strong>Direction artistique</strong><br>Image de marque</p>
+      </div>
+      <div class="meta-item reveal" style="transition-delay:.16s">
+        <p class="meta-label">Outils</p>
+        <p class="meta-value">Illustrator<br>Procreate</p>
+      </div>
+      <div class="meta-item reveal" style="transition-delay:.24s">
+        <p class="meta-label">Statut</p>
+        <p class="meta-value"><strong>Livré</strong></p>
+      </div>
+
+      <div class="meta-item brief reveal" style="transition-delay:.32s">
+        <p class="meta-label">Brief</p>
+        <p class="meta-value">
+          Poppy Surfboard est une marque de planches de surf artisanales née à Bordeaux dans les mains de Marceau Pegon. Le brief demandait une identité visuelle originale : plusieurs logos pour chaque style de planche. L'enjeu était de retranscrire l'énergie de la marque sans perdre le coquelicot au centre de la marque.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 — BRANDING -->
+  <!--
+  <section>
+    <p class="section-label" data-n="01">Branding</p>
+
+    <div style="display:flex; flex-direction:column; gap:72px;">
+
+      <div class="reveal">
+        <p class="sub-title">Palette de couleurs</p>
+        <div class="palette-swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#000000; border:1px solid var(--border)"></div>
+            <p class="swatch-hex">#000000</p>
+            <p class="swatch-name">Principale</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#FBF7F2; border:1px solid var(--border)"></div>
+            <p class="swatch-hex">#FBF7F2</p>
+            <p class="swatch-name">Beige</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#E30613;"></div>
+            <p class="swatch-hex">#E30613</p>
+            <p class="swatch-name">Pétale</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <p class="sub-title">Typographie</p>
+        <div class="typo-showcase">
+          <div class="typo-card">
+            <p class="typo-sample" style="font-family:'Calistoga',serif; font-style:italic;">
+              Ride the<br>wave.
+            </p>
+            <div class="typo-meta">
+              <strong>Calistoga Regular</strong>
+              Display / Titres
+            </div>
+          </div>
+          <div class="typo-card">
+            <p class="typo-sample" style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-weight:300; font-size:clamp(16px,2vw,24px); line-height:1.6;">
+              Chaque planche est façonnée à la main dans notre atelier à Bordeaux.
+            </p>
+            <div class="typo-meta">
+              <strong>Helvetica Neue Light</strong>
+              Corps de texte
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  -->
+
+  <!-- 02 — VISUELS -->
+  <section>
+    <div class="fullwidth-gallery">
+      <img src="../images/poppy/img-00.jpg" alt="Logo principal Poppy Surfboard">
+      <img src="../images/poppy/img-01-1.jpg" alt="Board illustrée et t-shirt logo">
+      <img src="../images/poppy/img-01.jpg" alt="Veste illustrée">
+      <img src="../images/poppy/img-02.jpg" alt="Board et Porsche">
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-copy">© 2024 Marion Lagarde</span>
+    <a href="webians.html" class="footer-next">
+      Projet suivant — Webians
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M19 12l-7 7M19 12l-7-7"/></svg>
+    </a>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
